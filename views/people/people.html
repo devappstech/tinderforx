@@ -1,7 +1,10 @@
-<ion-pane ng-controller="CardsCtrl" >
-  <ion-header-bar class="bar-calm">
-    <h1 class="title">Tinder for X</h1>
-  </ion-header-bar>
+<ion-view view-title="Chemistry">
+  <ion-nav-title>
+    <div class="padding">
+      <img height="30px" src="img/logo.png">
+    </div>
+    </ion-nav-title>
+<ion-pane ng-controller="CardsCtrl"  >
   <td-cards>
     <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
           on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
@@ -15,7 +18,9 @@
               </div>
               <div class="buttondesc">
                 <div class="username"><i class="icon ion-android-contact"></i> {{card.user.username}}</div>
-                <button ng-click="yesCard()" class="button button-balanced">Yes</button><button ng-click="noCard()" class="button button-assertive">No</button></div>
+                <button ng-click="noCard()" class="button button-assertive">No</button>
+                <button ng-click="yesCard()" class="button button-balanced">Yes</button></div>
     </td-card>
   </td-cards>
 </ion-pane>
+</ion-view>
