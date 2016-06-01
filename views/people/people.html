@@ -12,10 +12,10 @@
       <div class="image">
         <div class="yes-text overlayBox"><div class="yesBox boxed" id="centerMe">Yes</div></div>
         <div class="no-text overlayBox"><div class="noBox boxed">No</div></div>
-        <img ng-src="{{card.user.picture.medium}}">
+        <img ng-src="{{card.picture.medium}}">
       </div>
       <div class="buttondesc">
-        <div class="username"><i class="icon ion-android-contact"></i> {{card.user.username}}</div>
+        <div class="username"><i class="icon ion-android-contact"></i> {{card.login.username}}</div>
         <button ng-click="noCard()" class="button button-assertive">No</button>
         <button ng-click="yesCard()" class="button button-balanced">Yes</button>
       </div>
