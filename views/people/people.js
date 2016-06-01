@@ -5,17 +5,18 @@ angular.module('starter')
   var cardTypes = [];
   $ionicLoading.show();
   $http.get('https://randomuser.me/api/?results=5').success(function (response) {
-      angular.forEach(response.results, function (famous) {
-        cardTypes.push(famous);
-        //console.log(JSON.stringify(famous));
-      });
-      $ionicLoading.hide();
-    }).error(function (err) {
-      console.log(err);
+    angular.forEach(response.results, function (famous) {
+      cardTypes.push(famous);
+      //console.log(JSON.stringify(famous));
     });
+    $ionicLoading.hide();
+  }).error(function (err) {
+    console.log(err);
+  });
 
   //$scope.cards = Array.prototype.slice.call(cardTypes, 0);
   $scope.cards = cardTypes;
+
   $scope.cardDestroyed = function(index) {
     $scope.cards.splice(index, 1);
   };
@@ -35,11 +36,11 @@ angular.module('starter')
     console.log('NO');
     $scope.addCard();
   };
+
   $scope.toggleLeft = function() {
-  $ionicSideMenuDelegate.toggleLeft();
+    $ionicSideMenuDelegate.toggleLeft();
   };
-})
-.controller('CardCtrl', function($scope, TDCardDelegate) {
+
   $scope.cardSwipedLeft = function(index) {
     console.log('LEFT SWIPE');
     $scope.addCard();
